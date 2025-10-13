@@ -1,0 +1,38 @@
+.carrusel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Ajuste de imagen para que cubra bien la pantalla */
+.carrusel-img {
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(0.8); /* oscurece un poco para que se lea el texto */
+}
+
+/* Textos centrados y con sombra */
+.carousel-caption h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carrusel-img {
+    height: 55vh;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}

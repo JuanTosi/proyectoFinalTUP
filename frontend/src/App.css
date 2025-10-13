@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,20 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+.main-content {
+  background-color: #d3d3d3;
+  color: #3a3a3a;
+}
+/* App.css */
+#root,
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
