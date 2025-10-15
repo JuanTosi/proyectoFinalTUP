@@ -1,9 +1,18 @@
 .footer {
-  background-color: #ca1c73;
-  color: #eee;
-  padding: 15px;
+  /* background-color: #c7c7c7; */
+  background-color: rgba(218, 211, 202, 0.9);
+  /* color: #6ab553; */
+  color: #d54b90;
+  padding-bottom: 15px;
+  display: flex;
   justify-content: space-around;
   text-align: center;
+}
+
+.content-footer {
+  text-align: start;
+  margin: auto;
+  margin-top: 0;
 }
 
 .footer iframe {
@@ -12,9 +21,4 @@
   height: 250px;
   border-radius: 10px;
   margin: 0;
-}
-
-.footer .texto-footer {
-  text-align: center;
-  margin: auto;
 }

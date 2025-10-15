@@ -2,7 +2,17 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import Productos from "./pages/Productos"
+import Carrito from "./pages/Carrito"
+import SobreNosotros from "./pages/SobreNosotros"
+import Servicios from "./pages/Servicios"
+import Perfil from "./pages/Perfil";
+import Error from "./pages/Error"
+import Tips from "./pages/Tips";
 import "./App.css"
+import Admin from "./pages/Admin";
 
 function App() {
 
@@ -12,12 +22,16 @@ function App() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/tienda" element={<Tienda />} />
-          <Route path="/busqueda" element={<Busqueda />} />
+          <Route path="/productos" element={<Productos />} />
+          <Route path="/tips" element={<Tips />} />
+          <Route path="/sobreNosotros" element={<SobreNosotros />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/miPerfil" element={<Perfil />} />
           <Route path="/carrito" element={<Carrito />} />
-          <Route path="*" element={<Error />} /> */}
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<Error />} />
           {/* Ruta solo para admin */}
           {/* <Route
             path="/admin/*"

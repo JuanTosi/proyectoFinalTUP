@@ -1,46 +1,150 @@
-/* .header {
-  background-color: #ca1c73;
-  color: #e2e2e2;
-  position: fixed;
-  z-index: 999999;
-  width: 100%;
-}
-
-.bg-body-tertiary {
-  background-color: #ca1c73 !important;
-} */
-
 .header {
-  background-color: #ca1c73;
-  color: #e2e2e2;
-  position: fixed;
-  z-index: 999999;
-  width: 100%;
-  transition: background-color 0.4s ease; /* para una transición suave */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(218, 211, 202, 0.9);
+  transition: all 0.3s ease;
 }
 
-/* Fondo base del navbar de Bootstrap */
 .bg-body-tertiary {
-  background-color: #ca1c73 !important;
+  background-color: transparent !important;
 }
 
-/* 🔽 En pantallas grandes (PC), el header será transparente */
+.navbar-collapse {
+  justify-content: center;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.navbar-brand {
+  color: #c24382 !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+  color: #a3145e !important;
+  transform: scale(1.08);
+  transition: all 0.4s ease;
+}
+
+.nav-link {
+  color: #2e2e2e !important;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #ca1c73;
+  transition: width 0.3s ease;
+}
+
 @media (min-width: 992px) {
-  .header {
-    background-color: transparent;
-    display: flex;
+  .nav-link:hover {
+    color: #ca1c73 !important;
+    transform: scale(1.08);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+.nav-link.active {
+  color: #ca1c73 !important;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.icon-link {
+  color: #2e2e2e !important;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #ca1c73 !important;
+}
+
+.icon-link::after {
+  display: none !important;
+}
+
+@media (min-width: 992px) {
+  .icon-link:hover {
+    color: #ca1c73 !important;
+    transform: scale(1.15);
+  }
+}
+
+.dropdown-menu {
+  background-color: rgba(245, 237, 228, 0.95);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  color: #2e2e2e !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #ca1c73;
+  color: #faf6f2 !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(46,46,46, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
     justify-content: center;
   }
 
-  /* También hacemos el navbar de Bootstrap transparente */
-  .bg-body-tertiary {
-    background-color: transparent !important;
+  .navbar-icons {
+    margin-left: auto;
   }
 
-  /* Si querés que los enlaces se vean mejor sobre fondo claro/imagen */
-  .header .nav-link,
-  .header .navbar-brand {
-    color: #fff !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  .navbar-toggler {
+    margin-left: 0.5rem;
+  }
+
+  .nav-link:hover,
+  .icon-link:hover {
+    transform: none;
+  }
+
+  .nav-link::after {
+    bottom: -2px;
   }
 }

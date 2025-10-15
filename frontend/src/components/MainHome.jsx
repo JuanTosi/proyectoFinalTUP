@@ -1,11 +1,12 @@
 // import React from 'react'
 // import img1 from '../assets/planta6.png';
 // import img2 from '../assets/planta8.png';
-import "../styles/mainhome.css"
+// import "../styles/mainhome.css"
 
 const MainHome = () => {
     return (
         <div>
+            <h1>Patio 1220</h1>
             {/* <div className="card">
                 <div className="card-content">
                     <div className="imagen-card">
