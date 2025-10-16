@@ -3,22 +3,26 @@
   background-color: rgba(218, 211, 202, 0.9);
   /* color: #6ab553; */
   color: #d54b90;
-  padding-bottom: 15px;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   text-align: center;
+  height: 25vh;
 }
 
-.content-footer {
-  text-align: start;
+.content-izq {
+  /* background-color: #d54b90; */
+  text-align: center;
+  padding: 2vh;
   margin: auto;
-  margin-top: 0;
+  margin-right: 0;
+  height: 100%;
 }
 
-.footer iframe {
-  width: 100%;
-  max-width: 500px;
-  height: 250px;
-  border-radius: 10px;
-  margin: 0;
+.content-der {
+  /* background-color: #d54b90; */
+  text-align: center;
+  padding: 2vh;
+  margin: auto;
+  margin-left: 0;
+  height: 100%;
 }

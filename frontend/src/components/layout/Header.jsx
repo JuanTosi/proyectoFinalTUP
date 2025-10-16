@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
-import "../styles/header.css";
+import "../../styles/header.css";
 
 const Header = () => {
     const [expanded, setExpanded] = useState(false);

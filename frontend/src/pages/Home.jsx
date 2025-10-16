@@ -1,8 +1,8 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Carrusel from '../components/Carrusel'
+import Header from '../components/layout/Header'
+import Footer from '../components/layout/Footer'
+import Carrusel from '../components/ui/Carrusel'
 import "../styles/main.css";
-import MainHome from '../components/MainHome';
+import MainHome from '../components/ui/MainHome';
 
 
 const Home = () => {
