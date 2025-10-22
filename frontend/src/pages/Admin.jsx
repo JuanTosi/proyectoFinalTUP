@@ -16,12 +16,12 @@ const Admin = () => {
                     </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link as={Link} to="/admin/peliculas" eventKey="/admin/peliculas">
+                    <Nav.Link as={Link} to="/admin/productos" eventKey="/admin/peliculas">
                         Productos
                     </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link as={Link} to="/admin/productos" eventKey="/admin/productos">
+                    <Nav.Link as={Link} to="/admin/otros" eventKey="/admin/productos">
                         Otros
                     </Nav.Link>
                 </Nav.Item>

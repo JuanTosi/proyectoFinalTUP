@@ -6,7 +6,7 @@ const Error = () => {
             <br />
             <br />
             <br />
-            <h1>Lo sentimos, la página que buscas no se encuentra disponible</h1>
+            <h1>Lo sentimos, la página que buscas no está disponible</h1>
         </div>
     )
 }
