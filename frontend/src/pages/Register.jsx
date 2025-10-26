@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import MainRegister from "../components/auth/MainRegister";
 
 const Register = () => {
-    return (
-        <div>Register</div>
-    )
-}
+  return <MainRegister />;
+};
 
-export default Register
+export default Register;

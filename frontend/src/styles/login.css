@@ -1,4 +1,4 @@
-/* ---------- SIGN IN ---------- */
+/* ---------- SIGN IN ----------
 .sign-in__wrapper {
   display: flex;
   flex-direction: column;
@@ -42,4 +42,39 @@
   100% {
     transform: translate(0, 0);
   }
+} */
+
+
+
+.bg-form{
+  background-color: rgba(218, 211, 202, 0.9);
+}
+
+
+.border-pink {
+  border: 1.5px solid #ca1c73;
+}
+
+.btn-pink {
+  background-color: #ca1c73;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.btn-pink:hover {
+  background-color: #ca1c73;
+  color: #000;
+}
+
+.btn-green {
+  background-color: #5dade2;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.btn-green:hover {
+  background-color: #5dade2;
+  color: #000;
 }
