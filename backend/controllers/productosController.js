@@ -26,8 +26,13 @@ export const agregarProducto = (req, res) => {
 
     connection.query(query, values, (error, results) => {
         if (error) throw error;
-        res.json(results)
-    })
+        const nuevoId = results.insertId;
+            connection.query("SELECT * from productos where idProducto=?", [nuevoId], (error, data) => {
+                if (error) throw error;
+                res.json(data[0])
+            }
+        );
+    });
 }
 
 //editar un producto

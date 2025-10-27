@@ -1,9 +1,18 @@
+// import { useState } from "react"
 import {
     Button, ButtonGroup, ButtonToolbar
 } from 'react-bootstrap';
 import "../../styles/producto-card.css"
 
 const Paginador = () => {
+    // const [paginaActual, setPaginaActual] = useState(1);
+    // const productosPorPagina = 10;
+    // const indiceUltimoProducto = paginaActual * productosPorPagina;
+    // const indicePrimerProducto = indiceUltimoProducto - productosPorPagina;
+    // const productosActuales = productosPorPagina.slice(indicePrimerProducto - indiceUltimoProducto);
+    // const totalPaginas = Math.cell(productosActuales.length / productosPorPagina);
+
+
     return (
         <div className='cards-container'>
             <div className="paginador">

@@ -1,26 +1,41 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { PRODUCTOS_URL } from "../constants/constants";
-import Table from 'react-bootstrap/Table';
-
+import Table from "react-bootstrap/Table";
+import ViewButton from "./buttons/ViewButton";
+import EditButton from "./buttons/EditButton";
+import DeleteButton from "./buttons/DeleteButton";
+import AddNewButton from "./buttons/AddNewButton";
+import Paginador from "../components/ui/Paginador"
+import { useProductosStore } from "../store/useProductosStore.js";
+import VerProductoModal from "./modals/VerProductoModal"
+import EditarProductoModal from "./modals/EditarProductoModal"
+import AgregarProductoModal from "./modals/AgregarProductoModal.jsx";
 
 const CrudProductos = () => {
+    const { productos, fetchProductos, isLoading, error } = useProductosStore();
+    const [showVerModal, setShowVerModal] = useState(false)
+    const [showEditModal, setShowEditModal] = useState(false)
+    const [showAddModal, setShowAddModal] = useState(false)
 
-    const [productos, setProductos] = useState([]);
+    const handleOpenVerModal = () => setShowVerModal(true)
+    const handleCloseVerModal = () => setShowVerModal(false)
+    const handleOpenEditModal = () => setShowEditModal(true)
+    const handleCloseEditModal = () => setShowEditModal(false)
+    const handleOpenAddModal = () => setShowAddModal(true)
+    const handleCloseAddModal = () => setShowAddModal(false)
 
     useEffect(() => {
-        axios.get(PRODUCTOS_URL)
-            .then((response) => {
-                setProductos(response.data)
-            })
-            .catch((error) => {
-                console.error("error al obtener los productos", error)
-            })
-    }, [])
+        fetchProductos()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    if (isLoading) return <p>Cargando productos...</p>;
+    if (error) return <p>{error}</p>;
 
     return (
         <div>
             <h2 className="mb-3">Listado de Productos</h2>
+            <AddNewButton onOpenModal={handleOpenAddModal} />
+            <AgregarProductoModal show={showAddModal} onClose={handleCloseAddModal} />
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
@@ -36,7 +51,7 @@ const CrudProductos = () => {
                 </thead>
                 <tbody>
                     {productos.map((prod) => (
-                        <tr key={prod.idProducto}>
+                        <tr key={Number(prod.idProducto)}>
                             <td>{prod.idProducto}</td>
                             <td>{prod.nombreProducto}</td>
                             <td>{prod.descripcionProducto}</td>
@@ -44,13 +59,22 @@ const CrudProductos = () => {
                             <td>{prod.stockProducto}</td>
                             <td>{prod.categoriaProducto}</td>
                             <td>{prod.dimensionProducto}</td>
-                            <td></td>
+                            <td>
+                                <ViewButton producto={prod} onOpenModal={handleOpenVerModal} />
+                                <EditButton producto={prod} onOpenModal={handleOpenEditModal} />
+                                <DeleteButton idProducto={prod.idProducto} />
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
+            <Paginador />
+            <VerProductoModal show={showVerModal} onClose={handleCloseVerModal} />
+            <EditarProductoModal show={showEditModal} onClose={handleCloseEditModal} />
         </div>
+
     )
+
 }
 
 export default CrudProductos
